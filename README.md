@@ -32,7 +32,7 @@ work in practice.
   inference engine: **2 performance PRs merged**.
 - 🦾 **ROS 2** — bridging learned policies to real robot stacks (nodes, controllers, perception → action pipelines).
   
-- 🔬 Research interests: Reinforcement Learning, AI Agent, Robot Manipulation/Locomotion,
+- 🔬 **Research interests**: Reinforcement Learning, AI Agent, Robot Manipulation/Locomotion,
   GPU-accelerated simulation and sim-to-real transfer.
 
 📫 **lynnhe02@gmail.com** · 📍 Texas
