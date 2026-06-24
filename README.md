@@ -1,8 +1,8 @@
 # Hi, I'm Lynn 👋
 
-*Robotics Reinforcement Learning · Sim-to-Real · LLM Infrastructure*
+*Robotic Reinforcement Learning · AI Agents · LLM Infrastructure · Sim-to-Real*
 
-**PhD student — open to research / robotics / ML internships. (Not seeking full-time.)**
+**PhD Student — Open to Research / Robotics / ML Internships.**
 
 [![Email](https://img.shields.io/badge/Email-lynnhe02@gmail.com-EA4335?logo=gmail&logoColor=white)](mailto:lynnhe02@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Lin%20He-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lin-he-566260335/)
@@ -15,20 +15,25 @@
 
 ## About Me
 
-PhD student working at the intersection of **robot learning and large-scale systems** — I train RL policies in
+PhD student working at the intersection of **Robot Learning and Large-scale Systems** — I train RL policies in
 simulation and push them toward real hardware, and I care about the infrastructure that makes both fast and correct.
 
 I came to AI from an unusual direction: a **B.Arch / architecture background** that taught me to reason about
-structure, geometry, and spatial constraints — which now feeds directly into how I think about robot learning,
-3D simulation, and AI for design.
+complex systems, geometry, spatial relationships, and the tradeoffs between elegant ideas and real-world
+constraints. Over time, I became convinced that many of the most important problems in design and the physical
+world will be solved not by better static tools, but by intelligent systems that can learn, adapt, and act. That
+belief drew me to robot learning, simulation, and AI infrastructure. I am especially energized by unfamiliar,
+technically demanding problems and by the process of turning ideas across disciplines into scalable systems that
+work in practice.
 
-- 🤖 **Robotics RL in simulation** — building and training policies in **NVIDIA Isaac Sim / Isaac Lab**
+- 🤖 **Robotics RL in Simulation** — building and training policies in **NVIDIA Isaac Sim / Isaac Lab**
   (locomotion / manipulation / sim-to-real) with GPU-parallel environments and PPO/SAC-style training.
-- 🦾 **ROS 2** — bridging learned policies to real robot stacks (nodes, controllers, perception → action pipelines).
 - ⚙️ **LLM infrastructure** — contributor to **[vLLM](https://github.com/vllm-project/vllm)**, the core LLM
-  inference engine: **2 performance PRs merged**, 2 more in review (details below).
-- 🔬 Research interests: sim-to-real transfer, reinforcement learning, robot manipulation/locomotion,
-  GPU-accelerated simulation, and efficient model serving.
+  inference engine: **2 performance PRs merged**.
+- 🦾 **ROS 2** — bridging learned policies to real robot stacks (nodes, controllers, perception → action pipelines).
+  
+- 🔬 Research interests: Reinforcement Learning, AI Agent, Robot Manipulation/Locomotion,
+  GPU-accelerated simulation and sim-to-real transfer.
 
 📫 **lynnhe02@gmail.com** · 📍 Texas
 
@@ -46,9 +51,7 @@ structure, geometry, and spatial constraints — which now feeds directly into h
 - **PR [#46543](https://github.com/vllm-project/vllm/pull/46543) — `[Perf][Multimodal]` (merged):** Removed a
   wasteful O(num_frames) timestamp-list allocation in GLM-4V / GLM video frame sampling, computing each timestamp
   inline as `frame_index * duration_per_frame`. Byte-for-byte identical behavior with lower memory on long videos.
-- **PRs [#46539](https://github.com/vllm-project/vllm/pull/46539) · [#46540](https://github.com/vllm-project/vllm/pull/46540) — `[Perf][V1]` (in review):**
-  Sampler optimizations — applying min-p in log-space and reusing log-probs to avoid redundant softmax passes.
-
+  
 ---
 
 ## Tech Stack
@@ -89,9 +92,3 @@ structure, geometry, and spatial constraints — which now feeds directly into h
 | **[Archiagents](https://archiagents.com/)** | End-to-end AI agent for architectural design (collaborative project). Ingests project briefs + CAD/DWG/IFC/Revit files, runs requirement dialogue, generates design schemes and photorealistic renders, and outputs IFC4 BIM models with an embedded Autodesk APS viewer. **My role:** brought the architecture-domain expertise (B.Arch background) — shaping the design-requirement logic, the agent's reasoning over building programs, and the IFC4 / BIM modeling that turns AI output into valid design deliverables. | Vercel AI SDK, shadcn/ui, Autodesk APS, IFC4 |
 | **[Revit-Civil-AI-Estimator](https://github.com/Lynn-hh/Revit-Civil-AI-Estimator)** | Revit 2025 add-in that uses OpenAI to automate quantity takeoff and cost estimation for civil-engineering workflows. | C#, OpenAI API, Revit |
 
----
-
-## GitHub Stats
-
-![Stats](https://github-readme-stats.vercel.app/api?username=Lynn-hh&show_icons=true&theme=default&hide_border=true)
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Lynn-hh&layout=compact&hide_border=true)
