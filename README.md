@@ -19,7 +19,7 @@ PhD student working at the intersection of **Robot Learning and Large-scale Syst
 simulation and push them toward real hardware, and I build the AI agents and infrastructure that make both fast
 and correct.
 
-I came to AI from an unusual direction: a **B.Arch / architecture background** that taught me to reason about
+I came to AI from an unusual direction: an **architecture background** that taught me to reason about
 complex systems, geometry, spatial relationships, and the tradeoffs between elegant ideas and real-world
 constraints. That convinced me the most important problems in the physical world will be solved not by better
 static tools, but by intelligent systems that can learn, adapt, and act — which drew me to robot learning,
@@ -45,7 +45,7 @@ ideas across disciplines into scalable systems that work in practice.
 | Project | Description | Stack |
 |---|---|---|
 | **[SafetyCommander](https://github.com/Lynn-hh/safety-commander-agent)** — Autonomous Factory Safety Officer | A VLM agent that **owns a safety officer's shift**: it watches the production floor on camera, reasons about risk by **reading the site's written safety policy** (and citing the exact clause it relied on), fires risk-graded actions (log → notify → corrective ticket → escalate → Slack), routes each alert to the right worker, and rolls each shift up into **KPI reports + a forward-looking inspection/training plan**. The **VLM makes every risk decision — no hardcoded rules** (edit one line of policy and the verdict flips). Built at the **Zapdos Labs × Antler** hackathon (*AI Agents for the American Industrial Revolution*); in active development since. | Qwen3-VL on **vLLM**, YOLO perception, TF-IDF RAG (OSHA/SOP), Flask |
-| **Franka Arm RL (Isaac Lab)** | Reinforcement-learning training for a **Franka Emika Panda** manipulator in **NVIDIA Isaac Lab** — GPU-parallel environments for arm control (reaching / manipulation) with PPO-style policy training in simulation. | Isaac Lab, Isaac Sim, PyTorch, RL |
+| **Arm Reinforcement Learning (Isaac Lab)** | Reinforcement-learning training for a **Franka Emika Panda** manipulator in **NVIDIA Isaac Lab** — GPU-parallel environments for arm control (reaching / manipulation) with PPO-style policy training in simulation. | Isaac Lab, Isaac Sim, PyTorch, RL |
 | **[Archiagents](https://archiagents.com/)** | End-to-end AI agent for architectural design (collaborative project). Ingests project briefs + CAD/DWG/IFC/Revit files, runs requirement dialogue, generates design schemes and photorealistic renders, and outputs IFC4 BIM models with an embedded Autodesk APS viewer. **My role:** brought the architecture-domain expertise (B.Arch background) — shaping the design-requirement logic, the agent's reasoning over building programs, and the IFC4 / BIM modeling that turns AI output into valid design deliverables. | Vercel AI SDK, shadcn/ui, Autodesk APS, IFC4 |
 | **[Revit-Civil-AI-Estimator](https://github.com/Lynn-hh/Revit-Civil-AI-Estimator)** | Revit 2025 add-in that uses OpenAI to automate quantity takeoff and cost estimation for civil-engineering workflows. | C#, OpenAI API, Revit |
 
@@ -53,7 +53,7 @@ ideas across disciplines into scalable systems that work in practice.
 
 ## Open Source — LLM Infrastructure Contributions
 
-### vllm-project/vllm (~84k★) — the core LLM inference engine
+### Vllm-project/Vllm (~84k★) — Core LLM Inference Engine
 
 - **PR [#46542](https://github.com/vllm-project/vllm/pull/46542) — `[Perf][LoRA]` (merged):** Replaced a per-token
   `list.index()` lookup in `convert_mapping` — an O(num_tokens × num_loras) hot path the code had flagged with a
@@ -68,7 +68,7 @@ ideas across disciplines into scalable systems that work in practice.
 
 ## Open Source — Robotics / Simulation Contributions
 
-### isaac-sim/IsaacLab — NVIDIA's GPU robot-learning framework
+### Isaac-sim/IsaacLab (~7k★) — NVIDIA's GPU Robot-Learning Framework
 
 - **PR [#6235](https://github.com/isaac-sim/IsaacLab/pull/6235) — Documentation fix (merged):** Fixed doc typos and
   a broken image path across asset-import, IMU, task-workflow, and OSC-controller docs. Merged into IsaacLab's
