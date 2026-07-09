@@ -51,7 +51,14 @@ work in practice.
 - **PR [#46543](https://github.com/vllm-project/vllm/pull/46543) — `[Perf][Multimodal]` (merged):** Removed a
   wasteful O(num_frames) timestamp-list allocation in GLM-4V / GLM video frame sampling, computing each timestamp
   inline as `frame_index * duration_per_frame`. Byte-for-byte identical behavior with lower memory on long videos.
-  
+
+---
+
+## Open Source — Robotics / Simulation Contributions
+
+### isaac-sim/IsaacLab — NVIDIA Isaac Lab robotics simulation framework
+
+- **PR [#6235](https://github.com/isaac-sim/IsaacLab/pull/6235) — Documentation fix (merged):** Fixed documentation typos and a broken image path in IsaacLab docs, including updates across asset import, IMU, task workflow, and OSC controller documentation. The PR was merged into IsaacLab's `develop` branch and added my name to `CONTRIBUTORS.md`.
 ---
 
 ## Tech Stack
@@ -59,7 +66,7 @@ work in practice.
 **Robotics & Simulation**
 
 ![Isaac Sim](https://img.shields.io/badge/Isaac%20Sim-76B900?logo=nvidia&logoColor=white)
-![Isaac Lab](https://img.shields.io/badge/Isaac%20Lab-76B900?logo=nvidia&logoColor=white)
+[![Isaac Lab](https://img.shields.io/badge/Isaac%20Lab-PR%20Merged-76B900?logo=nvidia&logoColor=white)](https://github.com/isaac-sim/IsaacLab/pull/6235)
 ![ROS 2](https://img.shields.io/badge/ROS%202-22314E?logo=ros&logoColor=white)
 ![MuJoCo](https://img.shields.io/badge/MuJoCo-000000?logoColor=white)
 ![Gymnasium](https://img.shields.io/badge/Gymnasium-0081A5?logoColor=white)
