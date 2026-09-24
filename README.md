@@ -23,8 +23,8 @@ I came to AI from an unusual direction: architecture, which taught me to reason 
 the tradeoffs between elegant ideas and real-world constraints. I love learning new things, digging into hard
 problems, and figuring out how to solve them.
 
-- 🤖 **Robotics Reinforcement Learning** — I trained contact-rich manipulation policies in NVIDIA Isaac Lab and
-  transferred them from simulation to real robots. I'm a contributor to Isaac Lab, with PRs to the Newton physics
+- 🤖 **Robotics Reinforcement Learning** — I trained contact-rich manipulation policies in NVIDIA Isaaclab and
+  transferred them from simulation to real robots. I'm a contributor to Isaaclab, with PRs to the Newton physics
   engine.
 - 🦾 **ROS 2** — I bridge learned policies to real robot stacks, and I built armguard-mcp, a safety-first MCP
   server that lets LLM agents operate ROS 2 robot arms.
