@@ -23,9 +23,12 @@ I came to AI from an unusual direction: architecture, which taught me to reason 
 the tradeoffs between elegant ideas and real-world constraints. I love learning new things, digging into hard
 problems, and figuring out how to solve them.
 
-- 🤖 **Robotics Reinforcement Learning** — Trained contact-rich manipulation policies in NVIDIA Isaac Lab and
-  transferred them from simulation to real robots; contributor to Isaac Lab, with PRs to the Newton physics engine.
-- 🦾 **ROS 2** — Bridging learned policies to real robot stacks.
+- 🤖 **Robotics Reinforcement Learning** — I trained contact-rich manipulation policies in NVIDIA Isaac Lab and
+  transferred them from simulation to real robots. I'm a contributor to Isaac Lab, with PRs to the Newton physics
+  engine.
+- 🦾 **ROS 2** — I bridge learned policies to real robot stacks, and I built
+  [armguard-mcp](https://github.com/Lynn-hh/armguard-mcp), a safety-first MCP server that lets LLM agents operate
+  ROS 2 robot arms.
 - 🧠 **AI Agents** — VLM-driven agents that perceive, reason over policy, and act in a closed
   sense→think→act→report loop (see SafetyCommander below).
 - ⚙️ **LLM Infrastructure** — Contributor to [vLLM](https://github.com/vllm-project/vllm), the core LLM inference engine.
