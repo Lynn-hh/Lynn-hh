@@ -23,18 +23,12 @@ I came to AI from an unusual direction: architecture, which taught me to reason 
 the tradeoffs between elegant ideas and real-world constraints. I love learning new things, digging into hard
 problems, and figuring out how to solve them.
 
-- 🤖 **Robotics RL in Simulation** — training policies in **NVIDIA Isaac Sim / Isaac Lab**
-  (locomotion / manipulation / sim-to-real) with GPU-parallel environments and PPO/SAC-style training;
-  contributor to **Isaac Lab** and the **Newton** physics engine (force/torque sensing, friction, IK/OSC).
-- 🧠 **AI Agents** — VLM-driven agents that perceive, reason over policy/knowledge, and act in a closed
-  sense→think→act→report loop (see **SafetyCommander** below).
-- ⚙️ **LLM Infrastructure** — contributor to **[vLLM](https://github.com/vllm-project/vllm)**, the core LLM
-  inference engine: **2 performance PRs merged**.
-- 🦾 **ROS 2** — bridging learned policies to real robot stacks (nodes, controllers, perception → action pipelines).
-- 🔬 **Research interests**: Reinforcement Learning, AI Agents, Robot Manipulation/Locomotion,
-  GPU-accelerated simulation and sim-to-real transfer.
-
-📫 **lynnhe02@gmail.com** · 📍 Tennessee
+- 🤖 **Robotics Reinforcement Learning** — training policies in NVIDIA Isaac Sim / Isaac Lab (contact-rich
+  manipulation / sim-to-real); contributor to Isaac Lab, with PRs to the Newton physics engine.
+- 🦾 **ROS 2** — bridging learned policies to real robot stacks.
+- 🧠 **AI Agents** — VLM-driven agents that perceive, reason over policy, and act in a closed
+  sense→think→act→report loop (see SafetyCommander below).
+- ⚙️ **LLM Infrastructure** — contributor to [vLLM](https://github.com/vllm-project/vllm), the core LLM inference engine.
 
 ---
 
