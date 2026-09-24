@@ -7,7 +7,8 @@
 [![Email](https://img.shields.io/badge/Email-lynnhe02@gmail.com-EA4335?logo=gmail&logoColor=white)](mailto:lynnhe02@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Lin%20He-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lin-he-566260335/)
 [![vLLM](https://img.shields.io/badge/vLLM-2%20PRs%20Merged-D32F2F?logo=github&logoColor=white)](https://github.com/vllm-project/vllm/pulls?q=is%3Apr+author%3ALynn-hh)
-[![Isaac Lab](https://img.shields.io/badge/Isaac%20Lab-Contributor-76B900?logo=nvidia&logoColor=white)](https://github.com/isaac-sim/IsaacLab/pulls?q=is%3Apr+author%3ALynn-hh)
+[![Isaac Lab](https://img.shields.io/badge/Isaac%20Lab-PRs%20Merged-76B900?logo=nvidia&logoColor=white)](https://github.com/isaac-sim/IsaacLab/pulls?q=is%3Apr+author%3ALynn-hh)
+[![Newton](https://img.shields.io/badge/Newton%20Physics-Contributor-76B900?logo=github&logoColor=white)](https://github.com/newton-physics/newton/pulls?q=is%3Apr+author%3ALynn-hh)
 [![ROS 2](https://img.shields.io/badge/ROS%202-22314E?logo=ros&logoColor=white)](https://docs.ros.org/)
 [![Location](https://img.shields.io/badge/Tennessee-US-555555?logo=googlemaps&logoColor=white)](#)
 
@@ -27,7 +28,8 @@ simulation, and AI infrastructure. I'm most energized by unfamiliar, technically
 ideas across disciplines into scalable systems that work in practice.
 
 - 🤖 **Robotics RL in Simulation** — training policies in **NVIDIA Isaac Sim / Isaac Lab**
-  (locomotion / manipulation / sim-to-real) with GPU-parallel environments and PPO/SAC-style training.
+  (locomotion / manipulation / sim-to-real) with GPU-parallel environments and PPO/SAC-style training;
+  contributor to **Isaac Lab** and the **Newton** physics engine (force/torque sensing, friction, IK/OSC).
 - 🧠 **AI Agents** — VLM-driven agents that perceive, reason over policy/knowledge, and act in a closed
   sense→think→act→report loop (see **SafetyCommander** below).
 - ⚙️ **LLM Infrastructure** — contributor to **[vLLM](https://github.com/vllm-project/vllm)**, the core LLM
@@ -53,7 +55,7 @@ ideas across disciplines into scalable systems that work in practice.
 
 ## Open Source — LLM Infrastructure Contributions
 
-### Vllm-project/Vllm (~84k★) — Core LLM Inference Engine
+### vllm-project/vllm (~92k★) — Core LLM Inference Engine
 
 - **PR [#46542](https://github.com/vllm-project/vllm/pull/46542) — `[Perf][LoRA]` (merged):** Replaced a per-token
   `list.index()` lookup in `convert_mapping` — an O(num_tokens × num_loras) hot path the code had flagged with a
@@ -68,17 +70,45 @@ ideas across disciplines into scalable systems that work in practice.
 
 ## Open Source — Robotics / Simulation Contributions
 
-### Isaac-sim/IsaacLab (~7k★) — NVIDIA's GPU Robot-Learning Framework
+### isaac-sim/IsaacLab (~8k★) — NVIDIA's GPU Robot-Learning Framework
 
-- **PR [#6235](https://github.com/isaac-sim/IsaacLab/pull/6235) — Documentation fix (merged):** Fixed doc typos and
-  a broken image path across asset-import, IMU, task-workflow, and OSC-controller docs. Merged into IsaacLab's
-  `develop` branch; added my name to `CONTRIBUTORS.md`.
-- **PR [#6237](https://github.com/isaac-sim/IsaacLab/pull/6237) — Bug fix (open, under review):** Four state-machine
-  / tutorial scripts called `AppLauncher(headless=args_cli.headless)` *after* registering the full launcher CLI arg
-  set — silently dropping every other flag (`--viz`, `--livestream`, `--enable_cameras`, …). Forwarded the full
-  parsed args so the flags take effect. **Closes #5572.**
-- **PR [#6306](https://github.com/isaac-sim/IsaacLab/pull/6306) — Bug fix (open):** Corrected an invalid task ID in
-  the Newton-physics sim-to-sim docs (the documented training command failed as written), plus related typos.
+- **PR [#7967](https://github.com/isaac-sim/IsaacLab/pull/7967) — Force/torque frame fixes (merged):**
+  - **FORGE:** `change_FT_frame` applied the inverse rotation and the wrong lever-arm sign when re-expressing a
+    wrench in another frame. I fixed it and added a point-force reference test.
+  - **PhysX joint-wrench sensor:** I suspected the sensor transformed its readings twice, then confirmed it in
+    simulation. With rotated and offset joint frames, the raw PhysX wrench matched the analytic value in every
+    case, while the sensor output did not. Based on this finding, a maintainer implemented the PhysX fix in this PR.
+- **Issue [#7969](https://github.com/isaac-sim/IsaacLab/issues/7969) — Newton wrist F/T sensing on fixed joints
+  (implemented upstream in [#7978](https://github.com/isaac-sim/IsaacLab/pull/7978)):** Proposed reporting joint
+  reaction wrenches for welded tool flanges and wrist sensors on the Newton backend, for parity with PhysX. The
+  proposal covered the failure mode, the physics check and the design.
+- **PR [#7989](https://github.com/isaac-sim/IsaacLab/pull/7989) — Body-offset Jacobian for DiffIK / OSC (open):**
+  Fixes the Jacobian shift to the end-effector offset frame used by the Franka IK/OSC tasks.
+  - It rotates the lever arm into the root frame and no longer rotates the angular rows.
+  - Against finite differences, the maximum error drops from 0.6 to 2e-7.
+- **PRs [#7987](https://github.com/isaac-sim/IsaacLab/pull/7987), [#7988](https://github.com/isaac-sim/IsaacLab/pull/7988) (open):**
+  - #7987: the multi-body projected-gravity observation crashed with the default all-body selection.
+  - #7988: the ANYmal LSTM actuator ignored the DC-motor torque-speed limit.
+- **PR [#6235](https://github.com/isaac-sim/IsaacLab/pull/6235) — Documentation fixes (merged).**
+
+### newton-physics/newton (~5.7k★) — GPU Physics Engine (NVIDIA · Google DeepMind · Disney Research)
+
+- **PR [#4306](https://github.com/newton-physics/newton/pull/4306) — Static vs. dynamic Coulomb friction:**
+  - Adds a separate static (break-away) friction coefficient to Newton's shape materials.
+  - Keeps USD `staticFriction`, which the importer used to discard.
+  - Passes the coefficient to the Kamino solver.
+  - The change is backward-compatible, and it is the first step toward stick-slip contact
+    ([#3560](https://github.com/newton-physics/newton/issues/3560)).
+- **PR [#4307](https://github.com/newton-physics/newton/pull/4307) — USD joint-state units:** Imported angular joint
+  velocities were 57.3× too large. The importer now converts deg/s to rad/s for revolute, D6 and merged joints.
+
+### [armguard-mcp](https://github.com/Lynn-hh/armguard-mcp) — Safety-first MCP server for ROS 2 manipulators
+
+- Lets LLM agents inspect, plan and execute on ROS 2 arms (MoveIt 2, ros2_control, franka_ros2).
+- The server enforces the safety envelope itself: joint, workspace and force/torque limits, keep-out zones,
+  allowlists and rate limits.
+- Motion requires human approval through MCP elicitation, and the server provides a software e-stop and an audit log.
+- CI runs unit tests and live-MoveIt integration tests on ROS 2 Jazzy.
 
 ---
 
@@ -87,7 +117,8 @@ ideas across disciplines into scalable systems that work in practice.
 **Robotics & Simulation**
 
 ![Isaac Sim](https://img.shields.io/badge/Isaac%20Sim-76B900?logo=nvidia&logoColor=white)
-[![Isaac Lab](https://img.shields.io/badge/Isaac%20Lab-PR%20Merged-76B900?logo=nvidia&logoColor=white)](https://github.com/isaac-sim/IsaacLab/pull/6235)
+[![Isaac Lab](https://img.shields.io/badge/Isaac%20Lab-PR%20Merged-76B900?logo=nvidia&logoColor=white)](https://github.com/isaac-sim/IsaacLab/pull/7967)
+![Newton](https://img.shields.io/badge/Newton-76B900?logo=nvidia&logoColor=white)
 ![ROS 2](https://img.shields.io/badge/ROS%202-22314E?logo=ros&logoColor=white)
 ![MuJoCo](https://img.shields.io/badge/MuJoCo-000000?logoColor=white)
 ![Gymnasium](https://img.shields.io/badge/Gymnasium-0081A5?logoColor=white)
