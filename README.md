@@ -113,7 +113,6 @@ problems, and figuring out how to solve them.
 ![Newton](https://img.shields.io/badge/Newton-76B900?logo=nvidia&logoColor=white)
 ![ROS 2](https://img.shields.io/badge/ROS%202-22314E?logo=ros&logoColor=white)
 ![MuJoCo](https://img.shields.io/badge/MuJoCo-000000?logoColor=white)
-![Gymnasium](https://img.shields.io/badge/Gymnasium-0081A5?logoColor=white)
 
 **AI / ML**
 
