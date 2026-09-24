@@ -16,16 +16,16 @@
 
 ## About Me
 
-PhD student at the University of Tennessee working on **robot learning for contact-rich manipulation**. I train
-RL policies in GPU-parallel simulation (NVIDIA Isaac Lab / Newton) that respect force limits and transfer to real
-robot arms, and I build the LLM-inference and agent tooling around them, contributing fixes upstream to
-**Isaac Lab, Newton and vLLM** along the way.
+PhD student working at the intersection of **Robot Learning and Large-scale Systems**. I train RL policies in
+simulation and push them toward real hardware, and I build the AI agents and infrastructure that make both fast
+and correct.
 
 I came to AI from an unusual direction: **architecture**, which taught me to reason about complex systems, geometry
-and space, and the tradeoffs between elegant ideas and real-world constraints. It convinced me that the hardest
-problems in the physical world will be solved not by better static tools, but by systems that learn, adapt, and act.
+and the tradeoffs between elegant ideas and real-world constraints. That convinced me the most important problems in
+the physical world will be solved not by better static tools, but by intelligent systems that can learn, adapt, and
+act.
 
-**I'm happiest when something doesn't work yet: I dig until I understand why, then I fix it.**
+> *"A problem well stated is a problem half solved."* — Charles Kettering
 
 - 🤖 **Robotics RL in Simulation** — training policies in **NVIDIA Isaac Sim / Isaac Lab**
   (locomotion / manipulation / sim-to-real) with GPU-parallel environments and PPO/SAC-style training;
