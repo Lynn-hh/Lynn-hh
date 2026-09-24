@@ -1,6 +1,6 @@
 # Hi, I'm Lynn 👋
 
-*Robotic Reinforcement Learning · AI Agents · LLM Infrastructure · Sim-to-Real*
+*Robotics · Reinforcement Learning · LLM Inference · Sim-to-Real*
 
 **PhD Student — Open to Research / Robotics / ML Internships.**
 
