@@ -6,8 +6,8 @@
 
 [![Email](https://img.shields.io/badge/Email-lynnhe02@gmail.com-EA4335?logo=gmail&logoColor=white)](mailto:lynnhe02@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Lin%20He-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lin-he-566260335/)
-[![vLLM](https://img.shields.io/badge/vLLM-Contributor%20%C2%B7%202%20PRs%20Merged-D32F2F?logo=github&logoColor=white)](https://github.com/vllm-project/vllm/pulls?q=is%3Apr+author%3ALynn-hh)
-[![Isaac Lab](https://img.shields.io/badge/Isaac%20Lab-Contributor%20%C2%B7%202%20PRs%20Merged-76B900?logo=nvidia&logoColor=white)](https://github.com/isaac-sim/IsaacLab/pulls?q=is%3Apr+author%3ALynn-hh)
+[![vLLM](https://img.shields.io/badge/vLLM-Contributor-76B900?logo=github&logoColor=white)](https://github.com/vllm-project/vllm/pulls?q=is%3Apr+author%3ALynn-hh)
+[![Isaac Lab](https://img.shields.io/badge/Isaac%20Lab-Contributor-76B900?logo=nvidia&logoColor=white)](https://github.com/isaac-sim/IsaacLab/pulls?q=is%3Apr+author%3ALynn-hh)
 [![Newton](https://img.shields.io/badge/Newton%20Physics-2%20PRs%20in%20Review-555555?logo=github&logoColor=white)](https://github.com/newton-physics/newton/pulls?q=is%3Apr+author%3ALynn-hh)
 [![ROS 2](https://img.shields.io/badge/ROS%202-22314E?logo=ros&logoColor=white)](https://docs.ros.org/)
 [![Location](https://img.shields.io/badge/Tennessee-US-555555?logo=googlemaps&logoColor=white)](#)
