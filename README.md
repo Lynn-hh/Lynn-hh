@@ -109,7 +109,7 @@ problems, and figuring out how to solve them.
 **Robotics & Simulation**
 
 ![Isaac Sim](https://img.shields.io/badge/Isaac%20Sim-76B900?logo=nvidia&logoColor=white)
-[![Isaac Lab](https://img.shields.io/badge/Isaac%20Lab-PR%20Merged-76B900?logo=nvidia&logoColor=white)](https://github.com/isaac-sim/IsaacLab/pull/7967)
+![Isaac Lab](https://img.shields.io/badge/Isaac%20Lab-76B900?logo=nvidia&logoColor=white)
 ![Newton](https://img.shields.io/badge/Newton-76B900?logo=nvidia&logoColor=white)
 ![ROS 2](https://img.shields.io/badge/ROS%202-22314E?logo=ros&logoColor=white)
 ![MuJoCo](https://img.shields.io/badge/MuJoCo-000000?logoColor=white)
@@ -118,7 +118,7 @@ problems, and figuring out how to solve them.
 **AI / ML**
 
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white)
-![RL (PPO/SAC)](https://img.shields.io/badge/RL-PPO%20%2F%20SAC-5C2D91)
+![RL (PPO/SAC)](https://img.shields.io/badge/RL%20(PPO%20%2F%20SAC)-5C2D91)
 ![vLLM](https://img.shields.io/badge/vLLM-D32F2F)
 ![YOLO](https://img.shields.io/badge/YOLO-00FFFF?logoColor=black)
 ![RAG](https://img.shields.io/badge/RAG-4B8BBE)
