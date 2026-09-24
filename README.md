@@ -47,14 +47,14 @@ problems, and figuring out how to solve them.
 
 ## Open Source — LLM Infrastructure Contributions
 
-### vllm-project/vllm (~92k★) — Core LLM Inference Engine
+### vLLM (vllm-project/vllm, ~92k★) — Core LLM Inference Engine
 
-- **PR [#46542](https://github.com/vllm-project/vllm/pull/46542) — `[Perf][LoRA]` (merged):** Replaced a per-token
+- **PR [#46542](https://github.com/vllm-project/vllm/pull/46542) — `[Perf][LoRA]` (Merged):** Replaced a per-token
   `list.index()` lookup in `convert_mapping` — an O(num_tokens × num_loras) hot path the code had flagged with a
   TODO — by building a reverse `{lora_id: index}` dict once for O(1) lookups, cutting mapping construction to
   O(num_tokens). **2.5×–6.5× faster** in microbenchmarks (e.g. 64 LoRAs / 1024 tokens: 275µs → 42µs), with
   identical output verified against randomized + existing LoRA tests.
-- **PR [#46543](https://github.com/vllm-project/vllm/pull/46543) — `[Perf][Multimodal]` (merged):** Removed a
+- **PR [#46543](https://github.com/vllm-project/vllm/pull/46543) — `[Perf][Multimodal]` (Merged):** Removed a
   wasteful O(num_frames) timestamp-list allocation in GLM-4V / GLM video frame sampling, computing each timestamp
   inline as `frame_index * duration_per_frame`. Byte-for-byte identical behavior with lower memory on long videos.
 
@@ -62,39 +62,39 @@ problems, and figuring out how to solve them.
 
 ## Open Source — Robotics / Simulation Contributions
 
-### isaac-sim/IsaacLab (~8k★) — NVIDIA's GPU Robot-Learning Framework
+### Isaac Lab (isaac-sim/IsaacLab, ~8k★) — NVIDIA's GPU Robot-Learning Framework
 
-- **PR [#7967](https://github.com/isaac-sim/IsaacLab/pull/7967) — Force/torque frame fixes (merged):**
+- **PR [#7967](https://github.com/isaac-sim/IsaacLab/pull/7967) — Force/Torque Frame Fixes (Merged):**
   - **FORGE:** `change_FT_frame` applied the inverse rotation and the wrong lever-arm sign when re-expressing a
     wrench in another frame. I fixed it and added a point-force reference test.
-  - **PhysX joint-wrench sensor:** I suspected the sensor transformed its readings twice, then confirmed it in
+  - **PhysX Joint-Wrench Sensor:** I suspected the sensor transformed its readings twice, then confirmed it in
     simulation. With rotated and offset joint frames, the raw PhysX wrench matched the analytic value in every
     case, while the sensor output did not. Based on this finding, a maintainer implemented the PhysX fix in this PR.
-- **Issue [#7969](https://github.com/isaac-sim/IsaacLab/issues/7969) — Newton wrist F/T sensing on fixed joints
-  (implemented upstream in [#7978](https://github.com/isaac-sim/IsaacLab/pull/7978)):** Proposed reporting joint
+- **Issue [#7969](https://github.com/isaac-sim/IsaacLab/issues/7969) — Newton Wrist F/T Sensing on Fixed Joints
+  (Implemented Upstream in [#7978](https://github.com/isaac-sim/IsaacLab/pull/7978)):** Proposed reporting joint
   reaction wrenches for welded tool flanges and wrist sensors on the Newton backend, for parity with PhysX. The
   proposal covered the failure mode, the physics check and the design.
-- **PR [#7989](https://github.com/isaac-sim/IsaacLab/pull/7989) — Body-offset Jacobian for DiffIK / OSC (open):**
+- **PR [#7989](https://github.com/isaac-sim/IsaacLab/pull/7989) — Body-Offset Jacobian for DiffIK / OSC (Open):**
   Fixes the Jacobian shift to the end-effector offset frame used by the Franka IK/OSC tasks.
   - It rotates the lever arm into the root frame and no longer rotates the angular rows.
   - Against finite differences, the maximum error drops from 0.6 to 2e-7.
-- **PRs [#7987](https://github.com/isaac-sim/IsaacLab/pull/7987), [#7988](https://github.com/isaac-sim/IsaacLab/pull/7988) (open):**
-  - #7987: the multi-body projected-gravity observation crashed with the default all-body selection.
-  - #7988: the ANYmal LSTM actuator ignored the DC-motor torque-speed limit.
-- **PR [#6235](https://github.com/isaac-sim/IsaacLab/pull/6235) — Documentation fixes (merged).**
+- **PRs [#7987](https://github.com/isaac-sim/IsaacLab/pull/7987), [#7988](https://github.com/isaac-sim/IsaacLab/pull/7988) — Observation and Actuator Fixes (Open):**
+  - #7987: The multi-body projected-gravity observation crashed with the default all-body selection.
+  - #7988: The ANYmal LSTM actuator ignored the DC-motor torque-speed limit.
+- **PR [#6235](https://github.com/isaac-sim/IsaacLab/pull/6235) — Documentation Fixes (Merged).**
 
-### newton-physics/newton (~5.7k★) — GPU Physics Engine (NVIDIA · Google DeepMind · Disney Research)
+### Newton (newton-physics/newton, ~5.7k★) — GPU Physics Engine (NVIDIA · Google DeepMind · Disney Research)
 
-- **PR [#4306](https://github.com/newton-physics/newton/pull/4306) — Static vs. dynamic Coulomb friction:**
+- **PR [#4306](https://github.com/newton-physics/newton/pull/4306) — Static vs. Dynamic Coulomb Friction (Open):**
   - Adds a separate static (break-away) friction coefficient to Newton's shape materials.
   - Keeps USD `staticFriction`, which the importer used to discard.
   - Passes the coefficient to the Kamino solver.
   - The change is backward-compatible, and it is the first step toward stick-slip contact
     ([#3560](https://github.com/newton-physics/newton/issues/3560)).
-- **PR [#4307](https://github.com/newton-physics/newton/pull/4307) — USD joint-state units:** Imported angular joint
+- **PR [#4307](https://github.com/newton-physics/newton/pull/4307) — USD Joint-State Units (Open):** Imported angular joint
   velocities were 57.3× too large. The importer now converts deg/s to rad/s for revolute, D6 and merged joints.
 
-### [armguard-mcp](https://github.com/Lynn-hh/armguard-mcp) — Safety-first MCP server for ROS 2 manipulators
+### [armguard-mcp](https://github.com/Lynn-hh/armguard-mcp) — Safety-First MCP Server for ROS 2 Manipulators
 
 - Lets LLM agents inspect, plan and execute on ROS 2 arms (MoveIt 2, ros2_control, franka_ros2).
 - The server enforces the safety envelope itself: joint, workspace and force/torque limits, keep-out zones,
