@@ -17,13 +17,13 @@
 ## About Me
 
 PhD student working at the intersection of **Robot Learning and Large-scale Systems**. I train RL policies in
-simulation and push them toward real hardware, and I build the AI agents and infrastructure that make both fast
-and correct.
+simulation, push them toward real hardware, and build the AI agents and infrastructure that make both fast and
+correct.
 
-I came to AI from an unusual direction: **architecture**, which taught me to reason about complex systems, geometry
-and the tradeoffs between elegant ideas and real-world constraints. That convinced me the most important problems in
-the physical world will be solved not by better static tools, but by intelligent systems that can learn, adapt, and
-act.
+I came to AI from an unusual direction: **architecture**. It taught me to reason about complex systems, geometry,
+and the tradeoffs between elegant ideas and real-world constraints, and it convinced me that the most important
+problems in the physical world will be solved not by better static tools, but by intelligent systems that can
+learn, adapt, and act.
 
 **I love learning new things, digging into hard problems, and figuring out how to solve them.**
 
