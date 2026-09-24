@@ -2,7 +2,7 @@
 
 *Robotics · Reinforcement Learning · LLM Inference · Sim-to-Real*
 
-**PhD Student — Open to Summer 2027 Internships in Robotics, Robot Learning, Embodied / Physical AI and Robotics Simulation.**
+**PhD Student — Open to Robotics / Machine Learning / Embodied AI Internships.**
 
 [![Email](https://img.shields.io/badge/Email-lynnhe02@gmail.com-EA4335?logo=gmail&logoColor=white)](mailto:lynnhe02@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Lin%20He-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lin-he-566260335/)
