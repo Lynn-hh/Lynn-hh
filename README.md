@@ -25,7 +25,7 @@ and the tradeoffs between elegant ideas and real-world constraints. That convinc
 the physical world will be solved not by better static tools, but by intelligent systems that can learn, adapt, and
 act.
 
-> *"A problem well stated is a problem half solved."* — Charles Kettering
+**I love learning new things, digging into hard problems, and figuring out how to solve them.**
 
 - 🤖 **Robotics RL in Simulation** — training policies in **NVIDIA Isaac Sim / Isaac Lab**
   (locomotion / manipulation / sim-to-real) with GPU-parallel environments and PPO/SAC-style training;
