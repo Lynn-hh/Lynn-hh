@@ -26,12 +26,11 @@ problems, and figuring out how to solve them.
 - 🤖 **Robotics Reinforcement Learning** — I trained contact-rich manipulation policies in NVIDIA Isaac Lab and
   transferred them from simulation to real robots. I'm a contributor to Isaac Lab, with PRs to the Newton physics
   engine.
-- 🦾 **ROS 2** — I bridge learned policies to real robot stacks, and I built
-  [armguard-mcp](https://github.com/Lynn-hh/armguard-mcp), a safety-first MCP server that lets LLM agents operate
-  ROS 2 robot arms.
-- 🧠 **AI Agents** — VLM-driven agents that perceive, reason over policy, and act in a closed
+- 🦾 **ROS 2** — I bridge learned policies to real robot stacks, and I built armguard-mcp, a safety-first MCP
+  server that lets LLM agents operate ROS 2 robot arms.
+- 🧠 **AI Agents** — I build VLM-driven agents that perceive, reason over policy, and act in a closed
   sense→think→act→report loop (see SafetyCommander below).
-- ⚙️ **LLM Infrastructure** — Contributor to [vLLM](https://github.com/vllm-project/vllm), the core LLM inference engine.
+- ⚙️ **LLM Infrastructure** — I contribute to vLLM, the core LLM inference engine.
 
 ---
 
