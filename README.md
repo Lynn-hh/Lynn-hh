@@ -106,6 +106,14 @@ problems, and figuring out how to solve them.
 - Motion requires human approval through MCP elicitation, and the server provides a software e-stop and an audit log.
 - CI runs unit tests and live-MoveIt integration tests on ROS 2 Jazzy.
 
+### [awesome-isaac-lab](https://github.com/Lynn-hh/awesome-isaac-lab) — Curated Resources for NVIDIA Isaac Lab
+
+[![Stars](https://img.shields.io/github/stars/Lynn-hh/awesome-isaac-lab?style=social)](https://github.com/Lynn-hh/awesome-isaac-lab)
+
+- A curated list of about 280 projects, tools, papers and learning resources built on Isaac Lab, covering locomotion,
+  humanoids, manipulation, dexterous hands, navigation and sim-to-real deployment.
+- Every entry is checked against GitHub and arXiv, and a weekly CI job checks the links.
+
 ---
 
 ## Tech Stack
