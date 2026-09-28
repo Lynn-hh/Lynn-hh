@@ -74,13 +74,15 @@ problems, and figuring out how to solve them.
   (Implemented Upstream in [#7978](https://github.com/isaac-sim/IsaacLab/pull/7978)):** Proposed reporting joint
   reaction wrenches for welded tool flanges and wrist sensors on the Newton backend, for parity with PhysX. The
   proposal covered the failure mode, the physics check and the design.
-- **PR [#7989](https://github.com/isaac-sim/IsaacLab/pull/7989) — Body-Offset Jacobian for DiffIK / OSC (Open):**
+- **PR [#7989](https://github.com/isaac-sim/IsaacLab/pull/7989) — Body-Offset Jacobian for DiffIK / OSC (Merged):**
   Fixes the Jacobian shift to the end-effector offset frame used by the Franka IK/OSC tasks.
   - It rotates the lever arm into the root frame and no longer rotates the angular rows.
   - Against finite differences, the maximum error drops from 0.6 to 2e-7.
-- **PRs [#7987](https://github.com/isaac-sim/IsaacLab/pull/7987), [#7988](https://github.com/isaac-sim/IsaacLab/pull/7988) — Observation and Actuator Fixes (Open):**
+- **PRs [#7987](https://github.com/isaac-sim/IsaacLab/pull/7987), [#7988](https://github.com/isaac-sim/IsaacLab/pull/7988) — Observation and Actuator Fixes (Merged):**
   - #7987: The multi-body projected-gravity observation crashed with the default all-body selection.
   - #7988: The ANYmal LSTM actuator ignored the DC-motor torque-speed limit.
+- **PR [#7997](https://github.com/isaac-sim/IsaacLab/pull/7997) — OVPhysX Joint-Wrench Frame (Merged):** Applied the
+  same double-transform fix to the kit-less OVPhysX backend and reused the shared frame-convention test.
 - **PR [#6235](https://github.com/isaac-sim/IsaacLab/pull/6235) — Documentation Fixes (Merged).**
 
 ### Newton (newton-physics/newton, ~5.7k★) — GPU Physics Engine (NVIDIA · Google DeepMind · Disney Research)
@@ -95,6 +97,8 @@ problems, and figuring out how to solve them.
   velocities were 57.3× too large. The importer now converts deg/s to rad/s for revolute, D6 and merged joints.
 
 ### [armguard-mcp](https://github.com/Lynn-hh/armguard-mcp) — Safety-First MCP Server for ROS 2 Manipulators
+
+[![M8ven Verified](https://m8ven.ai/badge/mcp/lynn-hh/armguard-mcp?variant=verified)](https://m8ven.ai/mcp/lynn-hh/armguard-mcp)
 
 - Lets LLM agents inspect, plan and execute on ROS 2 arms (MoveIt 2, ros2_control, franka_ros2).
 - The server enforces the safety envelope itself: joint, workspace and force/torque limits, keep-out zones,
