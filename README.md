@@ -104,7 +104,9 @@ problems, and figuring out how to solve them.
 - The server enforces the safety envelope itself: joint, workspace and force/torque limits, keep-out zones,
   allowlists and rate limits.
 - Motion requires human approval through MCP elicitation, and the server provides a software e-stop and an audit log.
-- CI runs unit tests and live-MoveIt integration tests on ROS 2 Jazzy.
+- A reproducible evaluation blocks 23/23 unsafe requests (forged approvals, keep-out targets, over-force contact,
+  motion during an e-stop) and executes 1000/1000 random safe moves; CI runs it on every push, along with
+  live-MoveIt integration tests on ROS 2 Jazzy.
 
 ### [awesome-isaac-lab](https://github.com/Lynn-hh/awesome-isaac-lab) — Curated Resources for NVIDIA Isaac Lab
 
