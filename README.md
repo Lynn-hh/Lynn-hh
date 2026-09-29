@@ -8,7 +8,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Lin%20He-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lin-he-566260335/)
 [![vLLM](https://img.shields.io/badge/vLLM-Contributor-76B900?logo=github&logoColor=white)](https://github.com/vllm-project/vllm/pulls?q=is%3Apr+author%3ALynn-hh)
 [![Isaac Lab](https://img.shields.io/badge/Isaac%20Lab-Contributor-76B900?logo=nvidia&logoColor=white)](https://github.com/isaac-sim/IsaacLab/pulls?q=is%3Apr+author%3ALynn-hh)
-[![Newton](https://img.shields.io/badge/Newton%20Physics-2%20PRs%20in%20Review-555555?logo=github&logoColor=white)](https://github.com/newton-physics/newton/pulls?q=is%3Apr+author%3ALynn-hh)
+[![Newton](https://img.shields.io/badge/Newton%20Physics-Contributor-76B900?logo=github&logoColor=white)](https://github.com/newton-physics/newton/pulls?q=is%3Apr+author%3ALynn-hh)
 [![ROS 2](https://img.shields.io/badge/ROS%202-22314E?logo=ros&logoColor=white)](https://docs.ros.org/)
 [![Location](https://img.shields.io/badge/Tennessee-US-555555?logo=googlemaps&logoColor=white)](#)
 
@@ -24,7 +24,7 @@ the tradeoffs between elegant ideas and real-world constraints. I love learning 
 problems, and figuring out how to solve them.
 
 - 🤖 **Robotics Reinforcement Learning** — I trained contact-rich manipulation policies in NVIDIA Isaaclab and
-  transferred them from simulation to real robots. I'm a contributor to Isaaclab, with PRs to the Newton physics
+  transferred them from simulation to real robots. I'm a contributor to Isaaclab and the Newton physics
   engine.
 - 🦾 **ROS 2** — I bridge learned policies to real robot stacks, and I built armguard-mcp, a safety-first MCP
   server that lets LLM agents operate ROS 2 robot arms.
@@ -93,7 +93,7 @@ problems, and figuring out how to solve them.
   - Passes the coefficient to the Kamino solver.
   - The change is backward-compatible, and it is the first step toward stick-slip contact
     ([#3560](https://github.com/newton-physics/newton/issues/3560)).
-- **PR [#4307](https://github.com/newton-physics/newton/pull/4307) — USD Joint-State Units (Open):** Imported angular joint
+- **PR [#4307](https://github.com/newton-physics/newton/pull/4307) — USD Joint-State Units (Merged):** Imported angular joint
   velocities were 57.3× too large. The importer now converts deg/s to rad/s for revolute, D6 and merged joints.
 
 ### [armguard-mcp](https://github.com/Lynn-hh/armguard-mcp) — Safety-First MCP Server for ROS 2 Manipulators
