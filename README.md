@@ -98,7 +98,7 @@ problems, and figuring out how to solve them.
 
 ### [armguard-mcp](https://github.com/Lynn-hh/armguard-mcp) — Safety-First MCP Server for ROS 2 Manipulators
 
-[![M8ven Verified](https://m8ven.ai/badge/mcp/lynn-hh/armguard-mcp?variant=verified)](https://m8ven.ai/mcp/lynn-hh/armguard-mcp)
+[![M8ven Verified](https://m8ven.ai/badge/mcp/lynn-hh-armguard-mcp-4jlmpb?v=5f7b4dde398f8793a5072c54b401f450&variant=verified)](https://m8ven.ai/mcp/lynn-hh-armguard-mcp-4jlmpb)
 
 - Lets LLM agents inspect, plan and execute on ROS 2 arms (MoveIt 2, ros2_control, franka_ros2).
 - The server enforces the safety envelope itself: joint, workspace and force/torque limits, keep-out zones,
