@@ -98,6 +98,7 @@ problems, and figuring out how to solve them.
 
 ### [armguard-mcp](https://github.com/Lynn-hh/armguard-mcp) — Safety-First MCP Server for ROS 2 Manipulators
 
+[![PyPI](https://img.shields.io/pypi/v/armguard-mcp.svg)](https://pypi.org/project/armguard-mcp/)
 [![M8ven Verified](https://m8ven.ai/badge/mcp/lynn-hh-armguard-mcp-4jlmpb?v=5f7b4dde398f8793a5072c54b401f450&variant=verified)](https://m8ven.ai/mcp/lynn-hh-armguard-mcp-4jlmpb)
 
 - Lets LLM agents inspect, plan and execute on ROS 2 arms (MoveIt 2, ros2_control, franka_ros2).
@@ -115,6 +116,16 @@ problems, and figuring out how to solve them.
 - A curated list of about 280 projects, tools, papers and learning resources built on Isaac Lab, covering locomotion,
   humanoids, manipulation, dexterous hands, navigation and sim-to-real deployment.
 - Every entry is checked against GitHub and arXiv, and a weekly CI job checks the links.
+
+### [isaaclab-robot-doctor](https://github.com/Lynn-hh/isaaclab-robot-doctor) — Pre-flight Checks and Config Generation for Isaac Lab Robots
+
+[![PyPI](https://img.shields.io/pypi/v/isaaclab-robot-doctor.svg)](https://pypi.org/project/isaaclab-robot-doctor/)
+
+- `check robot.urdf` finds what breaks an Isaac Lab import before Isaac Sim is opened: invalid masses and inertias,
+  millimetre units, missing joint limits, mimic joints, kinematic loops, a base that should be fixed, and the
+  breadth-first joint order the physics engine exposes. URDF and USD input, no GPU.
+- `gen-cfg` writes an `ArticulationCfg` with actuator groups from the joint-name families and starting PD gains
+  taken from the medians of the 106 actuator configs shipped with Isaac Lab.
 
 ---
 
