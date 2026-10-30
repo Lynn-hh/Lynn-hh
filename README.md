@@ -2,7 +2,7 @@
 
 *Robotics · Reinforcement Learning · LLM Inference · Sim-to-Real*
 
-**PhD student — seeking an internship in robot learning, contact-rich manipulation and sim-to-real.**
+**PhD student — seeking a Summer 2027 research internship in robot learning, contact-rich manipulation and sim-to-real.**
 
 [![Email](https://img.shields.io/badge/Email-lynnhe02@gmail.com-EA4335?logo=gmail&logoColor=white)](mailto:lynnhe02@gmail.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Lin%20He-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lin-he-566260335/)
@@ -23,9 +23,9 @@ I came to AI from an unusual direction: architecture, which taught me to reason 
 the tradeoffs between elegant ideas and real-world constraints. I love learning new things, digging into hard
 problems, and figuring out how to solve them.
 
-- 🤖 **Robotics Reinforcement Learning** — I trained contact-rich manipulation policies in NVIDIA Isaaclab and
-  transferred them from simulation to real robots. I'm a contributor to Isaaclab and the Newton physics
-  engine.
+- 🤖 **Robotics Reinforcement Learning** — I trained contact-rich manipulation policies in NVIDIA Isaac Lab and
+  transferred them from simulation to real robots. I'm a contributor to Isaac Lab, the Newton physics engine
+  and MuJoCo Warp.
 - 🦾 **ROS 2** — I bridge learned policies to real robot stacks, and I built armguard-mcp, a safety-first MCP
   server that lets LLM agents operate ROS 2 robot arms.
 - 🧠 **AI Agents** — I build VLM-driven agents that perceive, reason over policy, and act in a closed
@@ -47,7 +47,7 @@ problems, and figuring out how to solve them.
 
 ## Open Source — LLM Infrastructure Contributions
 
-### vLLM (vllm-project/vllm, ~92k★) — Core LLM Inference Engine
+### vLLM (vllm-project/vllm, ~96k★) — Core LLM Inference Engine
 
 - **PR [#46542](https://github.com/vllm-project/vllm/pull/46542) — `[Perf][LoRA]` (Merged):** Replaced a per-token
   `list.index()` lookup in `convert_mapping` — an O(num_tokens × num_loras) hot path the code had flagged with a
@@ -62,8 +62,13 @@ problems, and figuring out how to solve them.
 
 ## Open Source — Robotics / Simulation Contributions
 
-### Isaac Lab (isaac-sim/IsaacLab, ~8k★) — NVIDIA's GPU Robot-Learning Framework
+### Isaac Lab (isaac-sim/IsaacLab, ~8.5k★) — NVIDIA's GPU Robot-Learning Framework
 
+- **PR [#8715](https://github.com/isaac-sim/IsaacLab/pull/8715) — Task-Space Action Clipping (Approved, awaiting merge):**
+  `ActionTermCfg.clip` keys were matched against joint names and then used to index the task-space clip buffer of
+  the DiffIK action term (an `IndexError`, or joint ranges silently applied to pose components), and the OSC term
+  never applied them. Both terms now expose `action_names` (`pos_x`, `rot_z`, `stiffness_x`, ...) and resolve
+  `clip` against them; a key that matches nothing or a quaternion component raises.
 - **PR [#7967](https://github.com/isaac-sim/IsaacLab/pull/7967) — Force/Torque Frame Fixes (Merged):**
   - **FORGE:** `change_FT_frame` applied the inverse rotation and the wrong lever-arm sign when re-expressing a
     wrench in another frame. I fixed it and added a point-force reference test.
@@ -85,8 +90,18 @@ problems, and figuring out how to solve them.
   same double-transform fix to the kit-less OVPhysX backend and reused the shared frame-convention test.
 - **PR [#6235](https://github.com/isaac-sim/IsaacLab/pull/6235) — Documentation Fixes (Merged).**
 
-### Newton (newton-physics/newton, ~5.7k★) — GPU Physics Engine (NVIDIA · Google DeepMind · Disney Research)
+### Newton (newton-physics/newton, ~5.9k★) — GPU Physics Engine (NVIDIA · Google DeepMind · Disney Research)
 
+- **PR [#4787](https://github.com/newton-physics/newton/pull/4787) — Per-World Broadphase Bounds in SolverMuJoCo (Merged):**
+  With `separate_worlds=True`, worlds whose shapes differ in size, or are resized at runtime, ran MuJoCo Warp's
+  broadphase with world 0's bounds: `geom_size` was written per world but `geom_aabb` and `geom_rbound` were not.
+  The update kernel now derives both per world for the primitive geoms the way `mj_setConst` does, and
+  `geom_aabb` is batched per world.
+- **PR [#4897](https://github.com/newton-physics/newton/pull/4897) — MJCF/USD `filterparent` and Weld-Group Collision Filters (Open):**
+  The importers honor `<flag filterparent="disable"/>` and the USD `mjc:flag:filterparent` scene flag.
+  `ModelBuilder` filters parent-child collisions by weld group, as MuJoCo does, and `SolverMuJoCo` exports
+  Newton's filter pairs instead of relying on MuJoCo's own parent rule, so a joint that opts out of the filter
+  collides in both pipelines.
 - **PR [#4306](https://github.com/newton-physics/newton/pull/4306) — Static vs. Dynamic Coulomb Friction (Open):**
   - Adds a separate static (break-away) friction coefficient to Newton's shape materials.
   - Keeps USD `staticFriction`, which the importer used to discard.
@@ -95,6 +110,13 @@ problems, and figuring out how to solve them.
     ([#3560](https://github.com/newton-physics/newton/issues/3560)).
 - **PR [#4307](https://github.com/newton-physics/newton/pull/4307) — USD Joint-State Units (Merged):** Imported angular joint
   velocities were 57.3× too large. The importer now converts deg/s to rad/s for revolute, D6 and merged joints.
+
+### MuJoCo Warp (google-deepmind/mujoco_warp, ~1.6k★) — MuJoCo on NVIDIA Warp
+
+- **PR [#1800](https://github.com/google-deepmind/mujoco_warp/pull/1800) — Batched `set_const` Outputs (Open):**
+  Fields that `set_const` derives per world from batched sources (`geom_aabb`, `geom_rbound`,
+  `body_subtreemass`) kept a single row, so every world overwrote the same values. `put_model` now batches them
+  with their sources, and `set_const` rejects an output with fewer rows than the worlds it computes.
 
 ### [armguard-mcp](https://github.com/Lynn-hh/armguard-mcp) — Safety-First MCP Server for ROS 2 Manipulators
 
@@ -113,7 +135,7 @@ problems, and figuring out how to solve them.
 
 [![Stars](https://img.shields.io/github/stars/Lynn-hh/awesome-isaac-lab?style=social)](https://github.com/Lynn-hh/awesome-isaac-lab)
 
-- A curated list of about 280 projects, tools, papers and learning resources built on Isaac Lab, covering locomotion,
+- A curated list of about 260 projects, tools, papers and learning resources built on Isaac Lab, covering locomotion,
   humanoids, manipulation, dexterous hands, navigation and sim-to-real deployment.
 - Every entry is checked against GitHub and arXiv, and a weekly CI job checks the links.
 
