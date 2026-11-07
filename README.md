@@ -64,7 +64,7 @@ problems, and figuring out how to solve them.
 
 ### Isaac Lab (isaac-sim/IsaacLab, ~8.5k★) — NVIDIA's GPU Robot-Learning Framework
 
-- **PR [#8715](https://github.com/isaac-sim/IsaacLab/pull/8715) — Task-Space Action Clipping (Approved, awaiting merge):**
+- **PR [#8715](https://github.com/isaac-sim/IsaacLab/pull/8715) — Task-Space Action Clipping (Merged):**
   `ActionTermCfg.clip` keys were matched against joint names and then used to index the task-space clip buffer of
   the DiffIK action term (an `IndexError`, or joint ranges silently applied to pose components), and the OSC term
   never applied them. Both terms now expose `action_names` (`pos_x`, `rot_z`, `stiffness_x`, ...) and resolve
