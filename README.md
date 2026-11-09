@@ -123,6 +123,7 @@ problems, and figuring out how to solve them.
   `o_solimp` and `o_friction` become per-world (batchable) options applied in the shared contact-parameter helpers of
   every narrowphase, with the NxN/SAP broadphase expansion mirroring MuJoCo's `makeAAMM`; parity-tested against MuJoCo
   for both broadphases and two heterogeneous worlds.
+
 ### [armguard-mcp](https://github.com/Lynn-hh/armguard-mcp) — Safety-First MCP Server for ROS 2 Manipulators
 
 [![PyPI](https://img.shields.io/pypi/v/armguard-mcp.svg)](https://pypi.org/project/armguard-mcp/)
