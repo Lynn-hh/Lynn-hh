@@ -118,6 +118,11 @@ problems, and figuring out how to solve them.
   `body_subtreemass`) kept a single row, so every world overwrote the same values. `put_model` now batches them
   with their sources, and `set_const` rejects an output with fewer rows than the worlds it computes.
 
+- **PR [#1926](https://github.com/google-deepmind/mujoco_warp/pull/1926) — Contact Parameter Override Flag (Open):**
+  Implemented MuJoCo's `override` enable flag, which MJWarp previously refused to load: `o_margin`, `o_solref`,
+  `o_solimp` and `o_friction` become per-world (batchable) options applied in the shared contact-parameter helpers of
+  every narrowphase, with the NxN/SAP broadphase expansion mirroring MuJoCo's `makeAAMM`; parity-tested against MuJoCo
+  for both broadphases and two heterogeneous worlds.
 ### [armguard-mcp](https://github.com/Lynn-hh/armguard-mcp) — Safety-First MCP Server for ROS 2 Manipulators
 
 [![PyPI](https://img.shields.io/pypi/v/armguard-mcp.svg)](https://pypi.org/project/armguard-mcp/)
