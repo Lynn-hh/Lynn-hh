@@ -124,6 +124,14 @@ problems, and figuring out how to solve them.
   every narrowphase, with the NxN/SAP broadphase expansion mirroring MuJoCo's `makeAAMM`; parity-tested against MuJoCo
   for both broadphases and two heterogeneous worlds.
 
+### Warp (NVIDIA/warp, ~7.3k★) — NVIDIA's Python Framework for GPU Simulation and Differentiable Programming
+
+- **PR [#2281](https://github.com/NVIDIA/warp/pull/2281) — Gradients of `wp.frac()` and Vector `wp.mod()` (Open):**
+  Found with a finite-difference sweep over ~90 differentiable built-ins: `wp.frac()` and the vector overloads of
+  `wp.mod()` were registered as non-differentiable, so `tape.backward()` silently returned zero gradients through them.
+  Implemented the adjoints (vector `mod` reuses the scalar rule per component) and extended the existing tests,
+  which had skipped these outputs ([issue #2280](https://github.com/NVIDIA/warp/issues/2280)).
+
 ### [armguard-mcp](https://github.com/Lynn-hh/armguard-mcp) — Safety-First MCP Server for ROS 2 Manipulators
 
 [![PyPI](https://img.shields.io/pypi/v/armguard-mcp.svg)](https://pypi.org/project/armguard-mcp/)
