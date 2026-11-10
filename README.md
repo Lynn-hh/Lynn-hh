@@ -97,17 +97,17 @@ problems, and figuring out how to solve them.
   broadphase with world 0's bounds: `geom_size` was written per world but `geom_aabb` and `geom_rbound` were not.
   The update kernel now derives both per world for the primitive geoms the way `mj_setConst` does, and
   `geom_aabb` is batched per world.
-- **PR [#4897](https://github.com/newton-physics/newton/pull/4897) — MJCF/USD `filterparent` and Weld-Group Collision Filters (Open):**
-  The importers honor `<flag filterparent="disable"/>` and the USD `mjc:flag:filterparent` scene flag.
-  `ModelBuilder` filters parent-child collisions by weld group, as MuJoCo does, and `SolverMuJoCo` exports
-  Newton's filter pairs instead of relying on MuJoCo's own parent rule, so a joint that opts out of the filter
-  collides in both pipelines.
-- **PR [#4306](https://github.com/newton-physics/newton/pull/4306) — Static vs. Dynamic Coulomb Friction (Open):**
+- **PR [#4306](https://github.com/newton-physics/newton/pull/4306) — Static vs. Dynamic Coulomb Friction (Merged):**
   - Adds a separate static (break-away) friction coefficient to Newton's shape materials.
   - Keeps USD `staticFriction`, which the importer used to discard.
   - Passes the coefficient to the Kamino solver.
   - The change is backward-compatible, and it is the first step toward stick-slip contact
     ([#3560](https://github.com/newton-physics/newton/issues/3560)).
+- **PR [#4897](https://github.com/newton-physics/newton/pull/4897) — MJCF/USD `filterparent` and Weld-Group Collision Filters (Open):**
+  The importers honor `<flag filterparent="disable"/>` and the USD `mjc:flag:filterparent` scene flag.
+  `ModelBuilder` filters parent-child collisions by weld group, as MuJoCo does, and `SolverMuJoCo` exports
+  Newton's filter pairs instead of relying on MuJoCo's own parent rule, so a joint that opts out of the filter
+  collides in both pipelines.
 - **PR [#4307](https://github.com/newton-physics/newton/pull/4307) — USD Joint-State Units (Merged):** Imported angular joint
   velocities were 57.3× too large. The importer now converts deg/s to rad/s for revolute, D6 and merged joints.
 
